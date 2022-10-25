@@ -7,16 +7,19 @@ extending the main idea explained in~\cite{kolosov_2022} that gives polynomial i
 where $\coeffA{m}{r}$ are real coefficients defined recursively, see~\cite{kolosov2016link}.
 Define the function $f$ such that based on the identity~\eqref{eq:odd-power-identity} with the only difference that
 values of $n, m$ in its left part appear to be parameters of the function $f$, that is
-\begin{definition}
+\begin{definition} (Polynomial function f.)
     \begin{equation}
-        f(x, y, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\label{eq:definition-f}
+        f(x, y, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r,
+        \label{eq:definition-f}
     \end{equation}
 \end{definition}
+where definition space of $(x,y,z)$ in~\eqref{eq:definition-f} is $x\in \mathbb{R}, \; y\in\mathbb{N}, \; z\in\mathbb{R}$ so that
+the triple $(x,y,z) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$.
 Important to note that upper bound of the sum $\sum_{k=1}^{z}$ in~\eqref{eq:definition-f} is parameter of the function $f$ in contrast
 to the equation~\eqref{eq:odd-power-identity} where upper bound of the sum is $n$.
 At first glance, equation~\eqref{eq:definition-f} might look complex and not immediately understood, so in order to understand
 the function $f$ and polynomials it produces.
-Substituting the values of $y=1,2,3$ we get the following polynomials
+Substituting the values of $y=1,2,3$ to the function $f$ we get the following polynomials
 \begin{align*}
     f(x, 1, z) &= 3 x z - 3 z^2 + 3 x z^2 - 2 z^3 \\
     f(x, 2, z) &= 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 +
@@ -30,21 +33,46 @@ Therefore, define the exponential function we work in context of.
 Exponential function $g$ is a function of two variables defined as follows
 \begin{definition}(Exponential function.)
     \begin{equation}
-        g(x, y) = x^{2y + 1}, \quad (x,y) \in \mathbb{R}
+        g(x, y) = x^{2y + 1}, \quad (x,y) \in \mathbb{R}\times\mathbb{N}
         \label{eq:definition-g}
     \end{equation}
 \end{definition}
-One more important thing to conclude on is to conclude on partial derivative notation,
+One more important thing is to conclude on partial derivative notation,
 more precisely the following notation for the partial derivative is used across the manuscript and remains unchanged
-\begin{notation} (Partial derivative.) Let be a function $f(x_1, x_2, \dots, x_n)$ defined over the real space $\mathbb{R}^n$.
-We denote partial derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$ as follows
+\begin{notation} (Partial derivative.)
+    Let be a function $f(x_1, x_2, \dots, x_n)$ defined over the real space $\mathbb{R}^n$.
+    We denote partial derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$ as follows
     \begin{equation*}
         f^{'}_{x_i} = \lim_{\Delta x_i \to 0} \frac{f(x_1, x_2, \dots, x_i + \Delta x_i, \dots, x_n) - f(x_1, x_2, \dots, x_n)}{\Delta x_i}
     \end{equation*}
-Derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$ evaluated in point $(y_1, y_2, \dots, y_n)$ is denoted as follows
+    Derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$
+    evaluated in point $(y_1, y_2, \dots, y_n) \in \mathbb{R}^n$ is denoted as follows
     \begin{equation*}
         f^{'}_{x_i} (y_1, y_2, \dots, y_n)
     \end{equation*}
 \end{notation}
-
-
+Therefore, the following identity in terms of partial derivatives shows the relation between exponential function $g$ and
+polynomial function $f$
+\begin{thm} (Exponential identity in terms of partial derivatives.)
+    Derivative of the exponential function $g^{'}_{x} (u, v)$ with respect to $x$ evaluated at point $(u,v) \in \mathbb{R}^2$
+    equals to derivative of the function $f$ with respect to $x$ evaluated at point $(u,v,u) \in \mathbb{R}^3$ plus
+    derivative of the function $f$ with respect to $z$ evaluated at point $(u,v,u) \in \mathbb{R}^3$
+    \begin{equation}
+        g^{'}_{x} (u, v) = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u)
+        \label{eq:odd-exponential-identity}
+    \end{equation}
+\end{thm}
+Particularly, it follows that for every pair $(u,v) \in \mathbb{R}$ an identity holds
+\begin{equation}
+    \label{eq:equation}
+    (2v+1)u^{2v} = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u),
+\end{equation}
+in its extended form
+\begin{equation*}
+(2v+1)u^{2v} =
+\left(\sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\right)^{'}_{x} (u, v, u) +
+\left(\sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\right)^{'}_{z} (u, v, u)
+\end{equation*}
+that is also an ordinary derivative of odd-power function $f(u)=u^{2v+1}$.
+To summarize and clarify all above, we provide a few examples that show an identity~\eqref{eq:odd-exponential-identity}
+in action.

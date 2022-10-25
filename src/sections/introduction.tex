@@ -12,5 +12,39 @@ values of $n, m$ in its left part appear to be parameters of the function $f$, t
         f(x, y, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\label{eq:definition-f}
     \end{equation}
 \end{definition}
-Important to note that upper bound of the sum $\sum_{k=1}^{z}$ is parameter of the function $f$ in contrast
+Important to note that upper bound of the sum $\sum_{k=1}^{z}$ in~\eqref{eq:definition-f} is parameter of the function $f$ in contrast
 to the equation~\eqref{eq:odd-power-identity} where upper bound of the sum is $n$.
+At first glance, equation~\eqref{eq:definition-f} might look complex and not immediately understood, so in order to understand
+the function $f$ and polynomials it produces.
+Substituting the values of $y=1,2,3$ we get the following polynomials
+\begin{align*}
+    f(x, 1, z) &= 3 x z - 3 z^2 + 3 x z^2 - 2 z^3 \\
+    f(x, 2, z) &= 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 +
+    15 z^4 - 15 x z^4 + 6 z^5 \\
+    f(x, 3, z) &= -7 x z + 14 x^2 z + 7 z^2 - 42 x z^2 + 35 x^3 z^2 + 28 z^3 - 140 x^2 z^3 + 70 x^3 z^3 + 175 x z^4 \\
+    &- 210 x^2 z^4 + 35 x^3 z^4 - 70 z^5 + 210 x z^5 - 84 x^2 z^5 - 70 z^6 + 70 x z^6 - 20 z^7
+\end{align*}
+According to the main topic of the current manuscript, it provides an odd-exponential identity
+in terms of partial derivatives.
+Therefore, define the exponential function we work in context of.
+Exponential function $g$ is a function of two variables defined as follows
+\begin{definition}(Exponential function.)
+    \begin{equation}
+        g(x, y) = x^{2y + 1}, \quad (x,y) \in \mathbb{R}
+        \label{eq:definition-g}
+    \end{equation}
+\end{definition}
+One more important thing to conclude on is to conclude on partial derivative notation,
+more precisely the following notation for the partial derivative is used across the manuscript and remains unchanged
+\begin{notation} (Partial derivative.) Let be a function $f(x_1, x_2, \dots, x_n)$ defined over the real space $\mathbb{R}^n$.
+We denote partial derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$ as follows
+    \begin{equation*}
+        f^{'}_{x_i} = \lim_{\Delta x_i \to 0} \frac{f(x_1, x_2, \dots, x_i + \Delta x_i, \dots, x_n) - f(x_1, x_2, \dots, x_n)}{\Delta x_i}
+    \end{equation*}
+Derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$ evaluated in point $(y_1, y_2, \dots, y_n)$ is denoted as follows
+    \begin{equation*}
+        f^{'}_{x_i} (y_1, y_2, \dots, y_n)
+    \end{equation*}
+\end{notation}
+
+

@@ -1,75 +1,160 @@
 This manuscript provides an exponential identity in terms of partial derivatives,
 extending the main idea explained in~\cite{kolosov_2022} that gives polynomial identity in a form as follows
 \begin{equation}
-    n^{2m+1} = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r, \quad (m,n) \in \mathbb{N},
+    n^{2m+1} = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \label{eq:odd-power-identity}
 \end{equation}
-where $\coeffA{m}{r}$ are real coefficients defined recursively, see~\cite{kolosov2016link}.
-Define the function $f$ such that based on the identity~\eqref{eq:odd-power-identity} with the only difference that
-values of $n, m$ in the right part of~\eqref{eq:odd-power-identity} appear to be parameters of the function $f$.
-In contrast to the equation~\eqref{eq:odd-power-identity}, upper bound $n$ of the sum $\sum_{k=1}^{n}$ turned into function's
-parameter as well, so that $f$ defined as follows
-\begin{definition} (Polynomial function f.)
+where $m,n \in \mathbb{N}$ and $\coeffA{m}{r}$ are real coefficients defined recursively, see~\cite{kolosov2016link}.
+Define the function $f_{y}$ such that based on the identity~\eqref{eq:odd-power-identity} with the only difference that
+values of $n, m$ in the right part of~\eqref{eq:odd-power-identity} appear to be parameters of the function $f_{y}$.
+In contrast to the equation~\eqref{eq:odd-power-identity}, upper bound $n$ of the sum $\sum_{k=1}^{n}$ turned into fixed
+function's parameter $y$ as well, so that $f_{y}$ defined as follows
+\begin{definition} (Polynomial function $f_{y}$.)
     \begin{equation}
-        f(x, y, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r,
+        f_{y} (x, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r
         \label{eq:definition-f}
     \end{equation}
 \end{definition}
-where definition space of $(x,y,z)$ in~\eqref{eq:definition-f} is $x\in \mathbb{R}, \; y\in\mathbb{N}, \; z\in\mathbb{R}$ so that
-the triple $(x,y,z) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$.
-At first glance, equation~\eqref{eq:definition-f} might look complex and not immediately understood, so in order to understand
-the function $f$ and polynomials it produces clearly let's show few examples.
+where $x, z\in \mathbb{R}$ and $y$ is constant $y \in \mathbb{N}$.
+At first glance, equation~\eqref{eq:definition-f} might look complex, so in order to clarify
+the function $f$ and polynomials it produces let's show few examples.
 Substituting the values of $y=1,2,3$ to the function $f$ we get the following polynomials
 \begin{align*}
-    f(x, 1, z) &= 3 x z - 3 z^2 + 3 x z^2 - 2 z^3 \\
-    f(x, 2, z) &= 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 +
+    f_{1} (x, z) &= 3 x z - 3 z^2 + 3 x z^2 - 2 z^3 \\
+    f_{2} (x, z) &= 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 +
     15 z^4 - 15 x z^4 + 6 z^5 \\
-    f(x, 3, z) &= -7 x z + 14 x^2 z + 7 z^2 - 42 x z^2 + 35 x^3 z^2 + 28 z^3 - 140 x^2 z^3 + 70 x^3 z^3 + 175 x z^4 \\
+    f_{3} (x, z) &= -7 x z + 14 x^2 z + 7 z^2 - 42 x z^2 + 35 x^3 z^2 + 28 z^3 - 140 x^2 z^3 + 70 x^3 z^3 + 175 x z^4 \\
     &- 210 x^2 z^4 + 35 x^3 z^4 - 70 z^5 + 210 x z^5 - 84 x^2 z^5 - 70 z^6 + 70 x z^6 - 20 z^7
 \end{align*}
-According to the main topic of the current manuscript, it provides an odd-exponential identity
-in terms of partial derivatives.
-Therefore, define the exponential function we work in context of.
-Exponential function $g$ is a function of two variables defined as follows
-\begin{definition}(Exponential function g.)
+According to the main topic of the current manuscript, it provides Another approach to get derivative of odd-power.
+Therefore, we define odd-power function we work in context of.
+Odd-power function $g_y$ is a function defined as follows
+\begin{definition}(Odd-power function $g_y$.)
     \begin{equation}
-        g(x, y) = x^{2y + 1}, \quad (x,y) \in \mathbb{R}\times\mathbb{N}
+        g_{y}(x) = x^{2y + 1}
         \label{eq:definition-g}
     \end{equation}
 \end{definition}
+where $x\in \mathbb{R}$ and $y$ is constant $y\in \mathbb{N}$.
 One more important thing is to conclude on partial derivative notation,
 more precisely the following notation for the partial derivative is used across the manuscript and remains unchanged
 \begin{notation} (Partial derivative.)
     Let be a function $f(x_1, x_2, \dots, x_n)$ defined over the real space $\mathbb{R}^n$.
-    We denote partial derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$ as follows
+    We denote partial derivative of the function $f$ with respect to $x_i$ as follows
     \begin{equation*}
         f^{'}_{x_i} = \lim_{\Delta x_i \to 0} \frac{f(x_1, x_2, \dots, x_i + \Delta x_i, \dots, x_n) - f(x_1, x_2, \dots, x_n)}{\Delta x_i}
     \end{equation*}
-    Derivative of the function $f$ with respect to $x_i, \quad 1 \leq i \leq n$
+    Derivative of the function $f$ with respect to $x_i$
     evaluated in point $(y_1, y_2, \dots, y_n) \in \mathbb{R}^n$ is denoted as follows
     \begin{equation*}
         f^{'}_{x_i} (y_1, y_2, \dots, y_n)
     \end{equation*}
 \end{notation}
-Therefore, the following identity in terms of partial derivatives shows the relation between exponential function $g$ and
-polynomial function $f$
+Therefore, the following identity in terms of partial derivatives shows the relation between exponential function $g_{y}$ and
+polynomial function $f_{y}$
 \begin{thm}
-    Derivative of the odd-exponential function $g(x, y) = x^{2y + 1}$ with respect to $x$ evaluated
-    at point $(u,v) \in \mathbb{R} \times \mathbb{N}$
-    equals to derivative of the function $f$ with respect to $x$ evaluated
-    at point $(u,v,u) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$ plus
-    derivative of the function $f$ with respect to $z$ evaluated
-    at point $(u,v,u) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$
+    Derivative $(g_v)^{'}_{x}$ of the odd-power function $g_v(x) = x^{2v + 1}$ evaluated
+    at point $u$ equals to derivative $(f_{v})^{'}_{x}$ evaluated at point $(u, u)$ plus
+    derivative $(f_{v})^{'}_{z}$ evaluated at point $(u, u)$
     \begin{equation}
-        g^{'}_{x} (u, v) = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u)
+    (g_v)
+        ^{'}_{x} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
         \label{eq:odd-exponential-identity}
     \end{equation}
 \end{thm}
-Particularly, it follows that for every triple $(u,v,u) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$ an identity holds
+Particularly, it follows that for every pair $u, v$ an identity holds
 \begin{equation}
     \label{eq:equation}
-    (2v+1)u^{2v} = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u)
+    (2v+1)u^{2v} = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
 \end{equation}
-that is also an ordinary derivative of odd-power function $f(u)=u^{2v+1}$.
+that is also an ordinary derivative of odd-power function $t^{2v+1}$, therefore
+\begin{equation*}
+    \frac{d}{dt} t^{2v+1} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
+\end{equation*}
 To summarize and clarify all above, we provide a few examples that show an identity~\eqref{eq:odd-exponential-identity}
 in action.
+\begin{example}
+    \normalfont
+    Identity~\eqref{eq:odd-exponential-identity} example for $x\in\mathbb{R}, \; z\in \mathbb{R}$ and $y=1$.
+    Consider the explicit form of the function $f_{1} (x, z)$ i.e
+    \[
+        f_1(x, z) = 3 x z - 3 z^2 + 3 x z^2 - 2 z^3
+    \]
+    Therefore, derivative of $f_{1}$ with respect to $x$ equals to
+    \[
+        (f_1)^{'}_{x} (x, z) = \lim_{d \to 0} \frac{3 d z + 3 d z^2}{d} = 3 z + 3 z^2
+    \]
+    Consider derivative of the function $f_1$ with respect to $z$, that is
+    \begin{align*}
+    (f_1)
+        ^{'}_{z} (x, z)
+        &= \lim_{d \to 0} \left[\frac{-3 d^2 - 2 d^3 + 3 d x + 3 d^2 x - 6 d z - 6 d^2 z + 6 d x z - 6 d z^2}{d} \right] \\
+        &= \lim_{d \to 0} \left[ -3 d - 2 d^2 + 3 x + 3 d x - 6 z - 6 d z + 6 x z - 6 z^2 \right] \\
+        &=3 x - 6 z + 6 x z - 6 z^2
+    \end{align*}
+    Combining both $(f_1)^{'}_{x}$ and $(f_1)^{'}_{z}$ evaluated at point $(u, u)$ we get
+    \begin{align*}
+    (f_1)
+        ^{'}_{x} + (f_1)^{'}_{z}
+        &= 3 x - 3 z + 6 x z - 3 z^2 \\
+        [(f_1)^{'}_{x} + (f_1)^{'}_{z}] (u,u)  &= 3 u^2
+    \end{align*}
+    that is derivative of the polynomial $u^3$.
+\end{example}
+\begin{example}
+    \normalfont
+    Identity~\eqref{eq:odd-exponential-identity} example for $x\in\mathbb{R}, \; z\in \mathbb{R}$ and $y=2$.
+    Consider the explicit form of the function $f_{2} (x, z)$ i.e
+    \[
+        f_2 (x, z) = 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 + 15 z^4 - 15 x z^4 + 6 z^5
+    \]
+    Therefore, derivative of $f_{2}$ with respect to $x$ equals to
+    \begin{align*}
+    (f_2)
+        ^{'}_{x} &= \lim_{d \to 0} \left[ 5 d z + 10 x z - 15 z^2 + 15 d z^2 + 30 x z^2 - 30 z^3 + 10 d z^3 +
+        20 x z^3 - 15 z^4 \right] \\
+        &= 10 x z - 15 z^2 + 30 x z^2 - 30 z^3 + 20 x z^3 - 15 z^4
+    \end{align*}
+    Consider derivative of the function $f_2$ with respect to $z$, that is
+    \begin{align*}
+    (f_2)
+        ^{'}_{z}
+        &= 5 x^2 - 30 x z + 30 x^2 z + 30 z^2 - 90 x z^2 + 30 x^2 z^2 + 60 z^3 - 60 x z^3 + 30 z^4
+    \end{align*}
+    Combining both $(f_2)^{'}_{x} (x, z)$ and $(f_2)^{'}_{z} (x, z)$ evaluated at point $(u, u)$ we get
+    \begin{align*}
+    (f_2)
+        ^{'}_{x} + (f_2)^{'}_{z} &= 5 x^2 - 20 x z + 30 x^2 z + 15 z^2 - 60 x z^2 + 30 x^2 z^2 + 30 z^3 - 40 x z^3 + 15 z^4\\
+        [(f_2)^{'}_{x} + (f_2)^{'}_{z}] (u,u) &= 5 u^4
+    \end{align*}
+    that is derivative of the polynomial $u^5$.
+\end{example}
+\begin{example}
+    \normalfont
+    Identity~\eqref{eq:odd-exponential-identity} example for $x\in\mathbb{R}, \; z\in \mathbb{R}$ and $y=3$.
+    Consider the explicit form of the function $f_{3} (x, z)$ i.e
+    \begin{align*}
+        f_3 (x, z) &= -7 x z + 14 x^2 z + 7 z^2 - 42 x z^2 + 35 x^3 z^2 + 28 z^3 -140 x^2 z^3 + 70 x^3 z^3 + 175 x z^4 \\
+        &- 210 x^2 z^4 + 35 x^3 z^4 -70 z^5 + 210 x z^5 - 84 x^2 z^5 - 70 z^6 + 70 x z^6 - 20 z^7
+    \end{align*}
+    Therefore, derivative of $f_{3}$ with respect to $x$ equals to
+    \begin{align*}
+    (f_3)
+        ^{'}_{x} &= -7 z + 28 x z - 42 z^2 + 105 x^2 z^2 - 280 x z^3 + 210 x^2 z^3 + 175 z^4 - 420 x z^4 \\
+        &+ 105 x^2 z^4 + 210 z^5 - 168 x z^5 + 70 z^6
+    \end{align*}
+    Consider derivative of the function $f_2$ with respect to $z$, that is
+    \begin{align*}
+    (f_3)
+        ^{'}_{z} &= -7 x + 14 x^2 + 14 z - 84 x z + 70 x^3 z + 84 z^2 - 420 x^2 z^2 + 210 x^3 z^2 + 700 x z^3 \\
+        &- 840 x^2 z^3 + 140 x^3 z^3 - 350 z^4 + 1050 x z^4 - 420 x^2 z^4 - 420 z^5 + 420 x z^5 - 140 z^6
+    \end{align*}
+    Combining both $(f_3)^{'}_{x} (x, z)$ and $(f_3)^{'}_{z} (x, z)$ evaluated at point $(u, u)$ we get
+    \begin{align*}
+    (f_3) ^{'}_{x} + (f_3)^{'}_{z} &= -7 x + 14 x^2 + 7 z - 56 x z + 70 x^3 z + 42 z^2 - 315 x^2 z^2 + 210 x^3 z^2 \\
+        &+ 420 x z^3 - 630 x^2 z^3 + 140 x^3 z^3 - 175 z^4 + 630 x z^4 - 315 x^2 z^4 - 210 z^5 \\
+        &+ 252 x z^5 - 70 z^6 \\
+    [(f_3) ^{'}_{x} + (f_3)^{'}_{z}] (u,u) &= 7 u^6
+    \end{align*}
+    that is derivative of the polynomial $u^7$.
+\end{example}

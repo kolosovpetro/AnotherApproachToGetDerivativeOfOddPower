@@ -6,7 +6,9 @@ extending the main idea explained in~\cite{kolosov_2022} that gives polynomial i
 \end{equation}
 where $\coeffA{m}{r}$ are real coefficients defined recursively, see~\cite{kolosov2016link}.
 Define the function $f$ such that based on the identity~\eqref{eq:odd-power-identity} with the only difference that
-values of $n, m$ in its left part appear to be parameters of the function $f$, that is
+values of $n, m$ in the right part of~\eqref{eq:odd-power-identity} appear to be parameters of the function $f$.
+In contrast to the equation~\eqref{eq:odd-power-identity}, upper bound $n$ of the sum $\sum_{k=1}^{n}$ turned into function's
+parameter as well, so that $f$ defined as follows
 \begin{definition} (Polynomial function f.)
     \begin{equation}
         f(x, y, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r,
@@ -15,10 +17,8 @@ values of $n, m$ in its left part appear to be parameters of the function $f$, t
 \end{definition}
 where definition space of $(x,y,z)$ in~\eqref{eq:definition-f} is $x\in \mathbb{R}, \; y\in\mathbb{N}, \; z\in\mathbb{R}$ so that
 the triple $(x,y,z) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$.
-Important to note that upper bound of the sum $\sum_{k=1}^{z}$ in~\eqref{eq:definition-f} is parameter of the function $f$ in contrast
-to the equation~\eqref{eq:odd-power-identity} where upper bound of the sum is $n$.
 At first glance, equation~\eqref{eq:definition-f} might look complex and not immediately understood, so in order to understand
-the function $f$ and polynomials it produces.
+the function $f$ and polynomials it produces clearly let's show few examples.
 Substituting the values of $y=1,2,3$ to the function $f$ we get the following polynomials
 \begin{align*}
     f(x, 1, z) &= 3 x z - 3 z^2 + 3 x z^2 - 2 z^3 \\
@@ -31,7 +31,7 @@ According to the main topic of the current manuscript, it provides an odd-expone
 in terms of partial derivatives.
 Therefore, define the exponential function we work in context of.
 Exponential function $g$ is a function of two variables defined as follows
-\begin{definition}(Exponential function.)
+\begin{definition}(Exponential function g.)
     \begin{equation}
         g(x, y) = x^{2y + 1}, \quad (x,y) \in \mathbb{R}\times\mathbb{N}
         \label{eq:definition-g}
@@ -53,26 +53,23 @@ more precisely the following notation for the partial derivative is used across 
 \end{notation}
 Therefore, the following identity in terms of partial derivatives shows the relation between exponential function $g$ and
 polynomial function $f$
-\begin{thm} (Exponential identity in terms of partial derivatives.)
-    Derivative of the exponential function $g^{'}_{x} (u, v)$ with respect to $x$ evaluated at point $(u,v) \in \mathbb{R}^2$
-    equals to derivative of the function $f$ with respect to $x$ evaluated at point $(u,v,u) \in \mathbb{R}^3$ plus
-    derivative of the function $f$ with respect to $z$ evaluated at point $(u,v,u) \in \mathbb{R}^3$
+\begin{thm}
+    Derivative of the odd-exponential function $g(x, y) = x^{2y + 1}$ with respect to $x$ evaluated
+    at point $(u,v) \in \mathbb{R} \times \mathbb{N}$
+    equals to derivative of the function $f$ with respect to $x$ evaluated
+    at point $(u,v,u) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$ plus
+    derivative of the function $f$ with respect to $z$ evaluated
+    at point $(u,v,u) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$
     \begin{equation}
         g^{'}_{x} (u, v) = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u)
         \label{eq:odd-exponential-identity}
     \end{equation}
 \end{thm}
-Particularly, it follows that for every pair $(u,v) \in \mathbb{R}$ an identity holds
+Particularly, it follows that for every triple $(u,v,u) \in \mathbb{R} \times \mathbb{N} \times \mathbb{R}$ an identity holds
 \begin{equation}
     \label{eq:equation}
-    (2v+1)u^{2v} = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u),
+    (2v+1)u^{2v} = f^{'}_{x} (u, v, u) + f^{'}_{z} (u, v, u)
 \end{equation}
-in its extended form
-\begin{equation*}
-(2v+1)u^{2v} =
-\left(\sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\right)^{'}_{x} (u, v, u) +
-\left(\sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\right)^{'}_{z} (u, v, u)
-\end{equation*}
 that is also an ordinary derivative of odd-power function $f(u)=u^{2v+1}$.
 To summarize and clarify all above, we provide a few examples that show an identity~\eqref{eq:odd-exponential-identity}
 in action.

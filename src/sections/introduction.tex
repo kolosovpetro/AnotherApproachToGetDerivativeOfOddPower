@@ -1,9 +1,14 @@
+This manuscript provides an exponential identity in terms of partial derivatives,
+extending the main idea explained in~\cite{kolosov_2022} that gives polynomial identity in a form as follows
 \begin{equation}
-    \begin{split}
-        n^{2m+1} &= \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r\\
-        P(x, m, b) &= \sum_{k=1}^{x} \sum_{r=0}^{m} \coeffA{m}{r} k^r (x-k)^r \\
-        f(x, y, z) &= \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r \\
-        g(x,y) &= x^{2y+1} \\
-        g^{'}_{x} &= f^{'}_{x} + f^{'}_{z}
-    \end{split}\label{eq:equation}
+    n^{2m+1} = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r, \quad (m,n) \in \mathbb{N},
+    \label{eq:odd-power-identity}
 \end{equation}
+where $\coeffA{m}{r}$ are real coefficients defined recursively, see~\cite{kolosov2016link}.
+Define the function $f$ such that based on the identity~\eqref{eq:odd-power-identity} with the only difference that
+values of $n, m$ in its left part appear to be parameters of the function $f$, that is
+%\begin{conj}
+%    \begin{equation}
+%        f(x, y, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r\label{eq:definition-f}
+%    \end{equation}
+%\end{conj}

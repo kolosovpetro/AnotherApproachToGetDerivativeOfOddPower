@@ -37,8 +37,8 @@ jobs:
         continue-on-error: true
         run: |
           cd ~/kolosovpetro.github.io
-          git config --global user.name '${{ secrets.GH_NAME }}'
-          git config --global user.email '${{ secrets.GH_EMAIL }}'
+          git config --global user.name "kolosovpetro"
+          git config --global user.email "kolosovp94@gmail.com"
           git add .
           git commit -am "CICD deploy of PDF document"
           git push

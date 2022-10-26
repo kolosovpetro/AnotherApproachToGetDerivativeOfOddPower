@@ -25,13 +25,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: drop
-          path: out/
+          path: src/AnotherApproachToGetDerivativeOfOddPower.pdf
 
       - name: Clone repository and add document
         continue-on-error: true
         run: |
           git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/kolosovpetro/kolosovpetro.github.io.git ~/kolosovpetro.github.io
-          cp out/AnotherApproachToGetDerivativeOfOddPower.pdf  ~/kolosovpetro.github.io/pdf/AnotherApproachToGetDerivativeOfOddPower.pdf
+          cp out/AnotherApproachToGetDerivativeOfOddPower.pdf ~/kolosovpetro.github.io/pdf/AnotherApproachToGetDerivativeOfOddPower.pdf
 
       - name: Commit document changes if any
         continue-on-error: true

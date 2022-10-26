@@ -25,7 +25,7 @@ jobs:
           working_directory: src
 
       - name: Upload artifacts
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: drop
           path: out/AnotherApproachToGetDerivativeOfOddPower.pdf

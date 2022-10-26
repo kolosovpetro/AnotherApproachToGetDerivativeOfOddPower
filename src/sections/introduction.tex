@@ -51,16 +51,22 @@ more precisely the following notation for the partial derivative is used across 
     \begin{equation*}
         f^{'}_{x_i} (y_1, y_2, \dots, y_n)
     \end{equation*}
+    Moreover, partial derivative $f^{'}_{x_i}$ evaluated at point $(y_1, y_2, \dots, y_n)$ plus
+    partial derivative $f^{'}_{x_j}$ evaluated at point $(y_1, y_2, \dots, y_n)$
+    is equivalent to the sum of partial derivatives $f^{'}_{x_i}, \; f^{'}_{x_j}$
+    evaluated at point $(y_1, y_2, \dots, y_n)$ and to be denoted as
+    \begin{equation*}
+        f^{'}_{x_i} (y_1, y_2, \dots, y_n) + f^{'}_{x_j} (y_1, y_2, \dots, y_n) = [f^{'}_{x_i} + f^{'}_{x_j}] (y_1, y_2, \dots, y_n)
+    \end{equation*}
 \end{notation}
 Therefore, the following identity in terms of partial derivatives shows the relation between odd-power function $g_{y}$ and
 polynomial function $f_{y}$
 \begin{thm}
-    Let be a fixed value $v\in \mathbb{N}$, then derivative $(g_v)^{'}_{x}$ of the odd-power function $g_v(x) = x^{2v + 1}$
+    Let be a fixed value $v\in \mathbb{N}$, then derivative $g_v^{'}$ of the odd-power function $g_v(x) = x^{2v + 1}$
     evaluated at point $u$ equals to derivative $(f_{v})^{'}_{x}$ evaluated at point $(u, u)$ plus
     derivative $(f_{v})^{'}_{z}$ evaluated at point $(u, u)$
     \begin{equation}
-    (g_v)
-        ^{'}_{x} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
+        g_v^{'} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
         \label{eq:odd-exponential-identity}
     \end{equation}
 \end{thm}
@@ -69,7 +75,7 @@ Particularly, it follows that for every pair $u, v$ an identity holds
     \label{eq:equation}
     (2v+1)u^{2v} = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
 \end{equation}
-that is also an ordinary derivative of odd-power function $t^{2v+1}$, therefore
+that is also an ordinary derivative of odd-power function $g_v(t) = t^{2v+1}$, therefore
 \begin{equation*}
     \frac{d}{dt} t^{2v+1} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
 \end{equation*}
@@ -153,10 +159,11 @@ in action.
     \end{align*}
     Combining both $(f_3)^{'}_{x} (x, z)$ and $(f_3)^{'}_{z} (x, z)$ evaluated at point $(u, u)$ we get
     \begin{align*}
-    (f_3) ^{'}_{x} + (f_3)^{'}_{z} &= -7 x + 14 x^2 + 7 z - 56 x z + 70 x^3 z + 42 z^2 - 315 x^2 z^2 + 210 x^3 z^2 \\
+    (f_3)
+        ^{'}_{x} + (f_3)^{'}_{z} &= -7 x + 14 x^2 + 7 z - 56 x z + 70 x^3 z + 42 z^2 - 315 x^2 z^2 + 210 x^3 z^2 \\
         &+ 420 x z^3 - 630 x^2 z^3 + 140 x^3 z^3 - 175 z^4 + 630 x z^4 - 315 x^2 z^4 - 210 z^5 \\
         &+ 252 x z^5 - 70 z^6 \\
-    [(f_3) ^{'}_{x} + (f_3)^{'}_{z}] (u,u) &= 7 u^6
+        [(f_3) ^{'}_{x} + (f_3)^{'}_{z}] (u,u) &= 7 u^6
     \end{align*}
     that is derivative of the polynomial $u^7$.
 \end{example}

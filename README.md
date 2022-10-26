@@ -1,18 +1,8 @@
-# Github LaTeX Template
-
-LaTeX template for Github including general CI/CD actions and Mathematica templates.
-
-<p align="center">
-  <img src="img/readme_logo_example.png" alt="logo_example"/>
-</p>
+# Another approach to get derivative of odd-power
 
 [![Build PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build.yml/badge.svg)
 [![Build and Deploy PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy.yml/badge.svg)
 ![contributors count](https://img.shields.io/github/contributors/kolosovpetro/github-latex-template)
-
-## What is all about
-
-LaTeX template for Github including general CI/CD actions and Mathematica templates.
 
 ## Build and run in Intellij IDEA
 

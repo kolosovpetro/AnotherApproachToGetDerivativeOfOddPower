@@ -62,6 +62,7 @@ more precisely the following notation for the partial derivative is used across 
 Therefore, the following identity in terms of partial derivatives shows the relation between odd-power function $g_{y}$ and
 polynomial function $f_{y}$
 \begin{thm}
+    \label{thm:main-theorem}
     Let be a fixed value $v\in \mathbb{N}$, then derivative $g_v^{'}$ of the odd-power function $g_v(x) = x^{2v + 1}$
     evaluated at point $u$ equals to derivative $(f_{v})^{'}_{x}$ evaluated at point $(u, u)$ plus
     derivative $(f_{v})^{'}_{z}$ evaluated at point $(u, u)$
@@ -71,14 +72,16 @@ polynomial function $f_{y}$
     \end{equation}
 \end{thm}
 Particularly, it follows that for every pair $u, v$ an identity holds
-\begin{equation}
-    \label{eq:equation}
-    (2v+1)u^{2v} = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
-\end{equation}
-that is also an ordinary derivative of odd-power function $g_v(t) = t^{2v+1}$, therefore
-\begin{equation*}
-    \frac{d}{dt} t^{2v+1} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
-\end{equation*}
+\begin{align*}
+(2v+1)
+    u^{2v} &= (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u) \\
+    &= [(f_{v})^{'}_{x} + (f_{v})^{'}_{z}](u,u)
+\end{align*}
+that is also an ordinary derivative of odd-power function $t^{2v+1}$, therefore
+\begin{align*}
+    \frac{d}{dt} t^{2v+1} (u) &= (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u) \\
+    &= [(f_{v})^{'}_{x} + (f_{v})^{'}_{z}](u,u)
+\end{align*}
 To summarize and clarify all above, we provide a few examples that show an identity~\eqref{eq:odd-exponential-identity}
 in action.
 \begin{example}
@@ -105,9 +108,9 @@ in action.
     (f_1)
         ^{'}_{x} + (f_1)^{'}_{z}
         &= 3 x - 3 z + 6 x z - 3 z^2 \\
-        [(f_1)^{'}_{x} + (f_1)^{'}_{z}] (u,u)  &= 3 u^2
+        \frac{d}{dt} t^{3} (u) &= [(f_1)^{'}_{x} + (f_1)^{'}_{z}] (u,u)  = 3 u^2
     \end{align*}
-    that is derivative of the polynomial $u^3$.
+    that confirms results of the theorem~\ref{thm:main-theorem}.
 \end{example}
 \begin{example}
     \normalfont
@@ -133,9 +136,9 @@ in action.
     \begin{align*}
     (f_2)
         ^{'}_{x} + (f_2)^{'}_{z} &= 5 x^2 - 20 x z + 30 x^2 z + 15 z^2 - 60 x z^2 + 30 x^2 z^2 + 30 z^3 - 40 x z^3 + 15 z^4\\
-        [(f_2)^{'}_{x} + (f_2)^{'}_{z}] (u,u) &= 5 u^4
+        \frac{d}{dt} t^{5} (u) &= [(f_2)^{'}_{x} + (f_2)^{'}_{z}] (u,u) = 5 u^4
     \end{align*}
-    that is derivative of the polynomial $u^5$.
+    that confirms results of the theorem~\ref{thm:main-theorem}.
 \end{example}
 \begin{example}
     \normalfont
@@ -163,7 +166,7 @@ in action.
         ^{'}_{x} + (f_3)^{'}_{z} &= -7 x + 14 x^2 + 7 z - 56 x z + 70 x^3 z + 42 z^2 - 315 x^2 z^2 + 210 x^3 z^2 \\
         &+ 420 x z^3 - 630 x^2 z^3 + 140 x^3 z^3 - 175 z^4 + 630 x z^4 - 315 x^2 z^4 - 210 z^5 \\
         &+ 252 x z^5 - 70 z^6 \\
-        [(f_3) ^{'}_{x} + (f_3)^{'}_{z}] (u,u) &= 7 u^6
+        \frac{d}{dt} t^{3} (u) &= [(f_3) ^{'}_{x} + (f_3)^{'}_{z}] (u,u) = 7 u^6
     \end{align*}
-    that is derivative of the polynomial $u^7$.
+    that confirms results of the theorem~\ref{thm:main-theorem}.
 \end{example}

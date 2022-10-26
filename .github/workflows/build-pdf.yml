@@ -12,19 +12,20 @@ on:
 jobs:
   build-resume:
     runs-on: ubuntu-latest
-    name: Create document
+    name: Build PDF
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Convert to pdf
-        id: convert-to-pdf
+      - name: Build PDF
         uses: xu-cheng/latex-action@v2
         with:
           root_file: AnotherApproachToGetDerivativeOfOddPower.tex
           working_directory: src
 
+      - name: Upload artifacts
       - uses: actions/upload-artifact@v3
         with:
           name: drop
-          path: out/
+          path: out/AnotherApproachToGetDerivativeOfOddPower.pdf

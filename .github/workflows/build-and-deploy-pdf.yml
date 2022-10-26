@@ -3,33 +3,36 @@ name: Build and Deploy PDF
 on:
   push:
     branches:
-      - master
       - main
 
 jobs:
   build-resume:
     runs-on: ubuntu-latest
-    name: Create document
+    name: Build and Deploy PDF
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Convert to pdf
-        id: convert-to-pdf
+
+      - name: Build PDF
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: AlternativeDerivative.tex
+          root_file: AnotherApproachToGetDerivativeOfOddPower.tex
           working_directory: src
+
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: AlternativeDerivative.pdf
+          path: AnotherApproachToGetDerivativeOfOddPower.pdf
+
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
+
       - name: Clone repository and add document
         run: |
           git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/kolosovpetro/kolosovpetro.github.io.git ~/kolosovpetro.github.io
-          cp out/AlternativeDerivative.pdf  ~/kolosovpetro.github.io/pdf/AlternativeDerivative.pdf
+          cp out/AnotherApproachToGetDerivativeOfOddPower.pdf  ~/kolosovpetro.github.io/pdf/AnotherApproachToGetDerivativeOfOddPower.pdf
+
       - name: Commit document changes if any
         run: |
           cd ~/kolosovpetro.github.io

@@ -31,7 +31,7 @@ jobs:
         continue-on-error: true
         run: |
           git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/kolosovpetro/kolosovpetro.github.io.git ~/kolosovpetro.github.io
-          cp out/AnotherApproachToGetDerivativeOfOddPower.pdf ~/kolosovpetro.github.io/pdf/AnotherApproachToGetDerivativeOfOddPower.pdf
+          cp src/AnotherApproachToGetDerivativeOfOddPower.pdf ~/kolosovpetro.github.io/pdf/AnotherApproachToGetDerivativeOfOddPower.pdf
 
       - name: Commit document changes if any
         continue-on-error: true

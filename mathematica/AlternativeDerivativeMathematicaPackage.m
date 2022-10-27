@@ -2,13 +2,11 @@
 
 BeginPackage["AlternativeDerivativeMathematicaPackage`"]
 
-A::usage= "A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k. 
-See https://kolosovpetro.github.io/pdf/AStudyOnDynamicEquations.pdf."
-
-f::usage= "f[x, y, z] returns the polynomial."
-g::usage= "g[x, y] returns exponential function."
-DividedDifferenceFbyX::usage = "Divided difference of f by X"
-DividedDifferenceFbyZ::usage = "Divided difference of f by Z"
+A::usage= "A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k. See https://oeis.org/A302971."
+f::usage= "f[x, y, z] returns the polynomial function f(x, y, z)."
+g::usage= "g[x, y] returns exponential function g(x, y)."
+DividedDifferenceFbyX::usage = "Divided difference of the function f by X."
+DividedDifferenceFbyZ::usage = "Divided difference of the function f by Z."
 
 Begin["`Private`"]
 
@@ -28,13 +26,6 @@ DividedDifferenceFbyZ[x_, y_, z_, d_] := (f[x, y, z+d] - f[x, y, z]) / d;
 End[ ]
 
 EndPackage[ ]
-
-
-
-
-
-
-
 
 
 

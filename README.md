@@ -1,8 +1,11 @@
 # Another approach to get derivative of odd-power
 
-[![Build PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build.yml/badge.svg)
-[![Build and Deploy PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy.yml/badge.svg)
-![contributors count](https://img.shields.io/github/contributors/kolosovpetro/github-latex-template)
+[![Build PDF](https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower/actions/workflows/build-pdf.yml/badge.svg?branch=master)](https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower/actions/workflows/build-pdf.yml)
+[![Build and Deploy PDF](https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower/actions/workflows/build-and-deploy-pdf.yml/badge.svg?branch=master)](https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower/actions/workflows/build-and-deploy-pdf.yml)
+
+
+This manuscript provides another approach to get derivative of odd-power, that is approach based on partial derivatives
+of polynomial function
 
 ## Build and run in Intellij IDEA
 
@@ -33,11 +36,9 @@
 
 Set repository secrets
 
-- `GH_ACCESS_TOKEN`: Generate Github Personal access token at
+- `GH_ACCESS_TOKEN`: Generate GitHub Personal access token at
   `Settings -> Developer Settings -> Personal access tokens -> Generate mew token` and assign in to
   secret `GH_ACCESS_TOKEN`
-- `GH_NAME`: Your Github username
-- `GH_EMAIL`: Your Github email
 
 ## Actions and their trigger policy
 

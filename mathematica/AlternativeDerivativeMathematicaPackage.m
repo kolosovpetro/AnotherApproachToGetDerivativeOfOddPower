@@ -7,6 +7,7 @@ f::usage= "f[x, y, z] returns the polynomial function f(x, y, z)."
 g::usage= "g[x, y] returns exponential function g(x, y)."
 DividedDifferenceFbyX::usage = "Divided difference of the function f by X."
 DividedDifferenceFbyZ::usage = "Divided difference of the function f by Z."
+PowerSum::usage = "Gives the power sum \sum_{k=1}^{z} k^r (x-k)^r."
 
 Begin["`Private`"]
 
@@ -22,10 +23,14 @@ f[x_, y_, z_] := Sum[Sum[A[y, r] * k^r * (x - k)^r, {r, 0, y}], {k, 1, z}];
 g[x_, y_] := x ^ (2*y + 1);
 DividedDifferenceFbyX[x_, y_, z_, d_] := (f[x + d, y, z] - f[x, y, z]) / d;
 DividedDifferenceFbyZ[x_, y_, z_, d_] := (f[x, y, z+d] - f[x, y, z]) / d;
+PowerSum[x_, r_, z_] := Sum[k^r (x-k)^r, {k, 1, z}]
 
 End[ ]
 
 EndPackage[ ]
+
+
+
 
 
 

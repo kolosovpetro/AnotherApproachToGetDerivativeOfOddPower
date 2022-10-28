@@ -1,6 +1,6 @@
 This manuscript provides another approach to get derivative of odd-power, that is approach based
 on partial derivatives identity in terms of partial derivatives, extending the main idea explained in~\cite{kolosov_2022}
-that gives polynomial identity in a form as follows
+that gives an odd-power identity in a form as follows
 \begin{equation}
     n^{2m+1} = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \label{eq:odd-power-identity}
@@ -32,14 +32,18 @@ Substituting the values of $y=1,2,3$ to the function $f$ we get the following po
     f_{3} (x, z) &= -7 x z + 14 x^2 z + 7 z^2 - 42 x z^2 + 35 x^3 z^2 + 28 z^3 - 140 x^2 z^3 + 70 x^3 z^3 + 175 x z^4 \\
     &- 210 x^2 z^4 + 35 x^3 z^4 - 70 z^5 + 210 x z^5 - 84 x^2 z^5 - 70 z^6 + 70 x z^6 - 20 z^7
 \end{align*}
-According to the main topic of the current manuscript, it provides Another approach to get derivative of odd-power.
+These polynomials are obtained rearranging the sums in the equation~\eqref{eq:definition-f} as
+\[
+    \sum_{r=0}^{y} \coeffA{y}{r} \left[ \sum_{k=1}^{z} k^r (x-k)^r \right]
+\]
+so that part $\sum_{k=1}^{z} k^r (x-k)^r$ is polynomial in $x, z$ calculated using Faulhaber's formula~\cite{beardon1996sums}.
+According to the main topic of the current manuscript, it provides another approach to get derivative of odd-power.
 Therefore, we define odd-power function we work in context of.
 Odd-power function $g_y$ is a function defined as follows
 \begin{definition}(Odd-power function $g_y$.)
-    \begin{equation}
+    \begin{equation*}
         g_{y}(x) = x^{2y + 1}
-        \label{eq:definition-g}
-    \end{equation}
+    \end{equation*}
 \end{definition}
 where $x\in \mathbb{R}$ and $y$ is constant $y\in \mathbb{N}$.
 Interesting part is that odd-power function $g_{y} (x)$ may be obtained as partial case of the function $f$,

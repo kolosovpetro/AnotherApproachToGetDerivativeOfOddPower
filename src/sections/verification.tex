@@ -1,0 +1,26 @@
+As it stated in conclusions, there is a possibility to validate main results of this manuscript using
+Wolfram Mathematica.
+Therefore, complete guide to validate the main results and formulae is attached as well.
+Mathematica package source file is available online under the folder \texttt{mathematica}, see~\cite{GithubSource_2022}.
+The following expressions could be verified:
+\begin{itemize}
+    \item Function $f_y(x,z)$ for any constant argument $y\in\mathbb{N}$ using mathematica method \texttt{f[x, y, z]} e.g
+    \[
+        \texttt{f[x, 1, z]} = 3 x z - 3 z^2 + 3 x z^2 - 2 z^3
+    \]
+    \item Partial derivative $(f_y)^{'}_x$ for any constant argument $y\in\mathbb{N}$ using mathematica
+    method \texttt{DerivativeFByX[x, y, z]}
+    \[
+        \texttt{DerivativeFByX[x, 1, z]} = 3 z + 3 z^2
+    \]
+    \item Partial derivative $(f_y)^{'}_z$ for any constant argument $y\in\mathbb{N}$ using mathematica
+    method \texttt{DerivativeFByZ[x, y, z]}
+    \[
+        \texttt{DerivativeFByZ[x, 1, z]} = 3 x - 6 z + 6 x z - 6 z^2
+    \]
+    \item Theorem~\ref{thm:main-theorem} for any constant argument $y\in\mathbb{N}$
+    \begin{align*}
+        \texttt{DerivativeFByX[x, 1, z]} + \texttt{DerivativeFByZ[x, 1, z]} &= 3 x - 3 z + 6 x z - 3 z^2 \\
+        \texttt{DerivativeFByX[u, 1, u]} + \texttt{DerivativeFByZ[u, 1, u]} &= 3 u^2
+    \end{align*}
+\end{itemize}

@@ -2,43 +2,89 @@ name: Build and Deploy PDF
 
 on:
   push:
-    branches:
-      - main
-      - master
+    tags:
+      - v*
+  workflow_dispatch:
+
+env:
+  FILE_NAME: "AnotherApproachToGetDerivativeOfOddPower"
 
 jobs:
-  build-resume:
+  build-pdf:
     runs-on: ubuntu-latest
     name: Build and Deploy PDF
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.15
+        with:
+          versionSpec: '5.x'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0.9.15
+
+      - name: Print SemVer
+        run: |
+          echo ${{ env.GITVERSION_SEMVER }}
+          echo ${{ env.GitVersion_InformationalVersion }}
+          echo ${{ env.GitVersion_EscapedBranchName }}
+
+      - name: Update version.tex
+        shell: bash
+        run: |
+          newVersion=${{ env.GitVersion_InformationalVersion }}
+          sed -i "s|Local-0.1.0|$newVersion|" "src/sections/version.tex"
 
       - name: Build PDF
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: AnotherApproachToGetDerivativeOfOddPower.tex
+          root_file: "${{ env.FILE_NAME }}.tex"
           working_directory: src
+
+      - name: List src
+        run: |
+          ls -lsa src
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: drop
-          path: src/AnotherApproachToGetDerivativeOfOddPower.pdf
+          name: "${{ env.FILE_NAME }}-${{ env.GitVersion_InformationalVersion }}"
+          path: |
+            src/${{ env.FILE_NAME }}.tex
+            src/${{ env.FILE_NAME }}.bbl
+            src/${{ env.FILE_NAME }}.bib
+            src/sections
+
+      - name: Upload artifacts PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: "${{ env.FILE_NAME }}-PDF-${{ env.GitVersion_InformationalVersion }}"
+          path: |
+            src/${{ env.FILE_NAME }}.pdf
 
       - name: Clone repository and add document
         continue-on-error: true
         run: |
-          git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/kolosovpetro/kolosovpetro.github.io.git ~/kolosovpetro.github.io
-          cp src/AnotherApproachToGetDerivativeOfOddPower.pdf ~/kolosovpetro.github.io/pdf/AnotherApproachToGetDerivativeOfOddPower.pdf
+          git clone https://$TOKEN@github.com/kolosovpetro/kolosovpetro.github.io.git ~/kolosovpetro.github.io
+          cp src/${{ env.FILE_NAME }}.pdf ~/kolosovpetro.github.io/pdf/${{ env.FILE_NAME }}.pdf
+        env:
+          TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
       - name: Commit document changes if any
         continue-on-error: true
         run: |
           cd ~/kolosovpetro.github.io
-          git config --global user.name "kolosovpetro"
-          git config --global user.email "kolosovp94@gmail.com"
+          git config --global user.name "$USERNAME"
+          git config --global user.email "$EMAIL"
           git add .
-          git commit -am "CICD deploy of PDF document"
+          git commit -m "$MESSAGE"
           git push
+        env:
+          USERNAME: "kolosovpetro"
+          EMAIL: "kolosovp94@gmail.com"
+          MESSAGE: "CICD deploy of PDF document"

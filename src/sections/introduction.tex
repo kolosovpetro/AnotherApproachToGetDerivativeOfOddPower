@@ -1,16 +1,25 @@
-This manuscript provides another approach to get derivative of odd-power, that is approach based
-on identity in terms of partial derivatives, extending the main idea explained in~\cite{kolosov_2022}
-that gives an odd-power in a form as follows
+This manuscript provides another approach to get derivative of odd-power, that is approach based on partial derivatives
+of the polynomial function $f_y(x,z)$ defined as
+\[
+    f_{y} (x, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \mathbf{A}_{y,r} k^r (x-k)^r
+\]
+where $x, z\in \mathbb{R}$, $y$ is fixed constant $y \in \mathbb{N}$ and $\mathbf{A}_{y,r}$ are real coefficients.
+So that we discuss another approach to get derivative of odd-power, that is an approach based
+on identity in terms of sum of partial derivatives of $f_{y}$.
+The function $f_{y}$ is based on the main results of the manuscript~\cite{kolosov_2022}
+that explains an odd-power in a form as follows
 \begin{equation}
     n^{2m+1} = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \label{eq:odd-power-identity}
 \end{equation}
 where $m$ is fixed constant $m\in\mathbb{N}$, $n \in \mathbb{N}$ and $\coeffA{m}{r}$ are real coefficients defined
 recursively, see~\cite{kolosov2016link}.
-Define the function $f_{y}$ such that based on the identity~\eqref{eq:odd-power-identity} with the only difference that
-values of $n, m$ in the right part of~\eqref{eq:odd-power-identity} appear to be parameters of the function $f_{y}$.
+We define the function $f_{y}$ such that based on the identity~\eqref{eq:odd-power-identity}
+with the only difference that values of $n, m$ in the right part of~\eqref{eq:odd-power-identity}
+appear to be parameters of the function $f_{y}$.
 In contrast to the equation~\eqref{eq:odd-power-identity}, upper bound $n$ of the sum $\sum_{k=1}^{n}$ turned into fixed
-function's parameter $y$ as well, so that $f_{y}$ defined as follows
+function's parameter $y$ as well.
+Let the function $f_{y}$ be defined as follows
 \begin{definition} (Polynomial function $f_{y}$.)
     \begin{equation}
         f_{y} (x, z) = \sum_{k=1}^{z} \sum_{r=0}^{y} \coeffA{y}{r} k^r (x-k)^r
@@ -24,7 +33,7 @@ Note that for every $x\in\mathbb{R}$ and constant $y\in\mathbb{N}$ the polynomia
 \end{equation*}
 At first glance, equation~\eqref{eq:definition-f} might look complex, so in order to clarify
 the function $f_y$ and polynomials it produces, let there be a few examples.
-Substituting the values of $y=1,2,3$ to the function $f$ we get the following polynomials
+Substituting the values of $y=1,2,3$ to the function $f_y$ we get the following polynomials in $x, z$
 \begin{align*}
     f_{1} (x, z) &= 3 x z - 3 z^2 + 3 x z^2 - 2 z^3 \\
     f_{2} (x, z) &= 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 +
@@ -32,71 +41,74 @@ Substituting the values of $y=1,2,3$ to the function $f$ we get the following po
     f_{3} (x, z) &= -7 x z + 14 x^2 z + 7 z^2 - 42 x z^2 + 35 x^3 z^2 + 28 z^3 - 140 x^2 z^3 + 70 x^3 z^3 + 175 x z^4 \\
     &- 210 x^2 z^4 + 35 x^3 z^4 - 70 z^5 + 210 x z^5 - 84 x^2 z^5 - 70 z^6 + 70 x z^6 - 20 z^7
 \end{align*}
-These polynomials are obtained by rearranging the sums in the equation~\eqref{eq:definition-f} as
+These polynomials are obtained by rearranging the sums in the definition~\eqref{eq:definition-f} as
 \[
-    \sum_{r=0}^{y} \coeffA{y}{r} \left[ \sum_{k=1}^{z} k^r (x-k)^r \right]
+    f_{y} (x, z) = \sum_{r=0}^{y} \coeffA{y}{r} \left[ \sum_{k=1}^{z} k^r (x-k)^r \right]
 \]
 So that part $\sum_{k=1}^{z} k^r (x-k)^r$ is polynomial
 in $x, z$ calculated using Faulhaber's formula~\cite{beardon1996sums}.
 According to the main topic of the current manuscript, it provides another approach to get derivative of odd-power.
 Therefore, we define odd-power function we work in the context of.
-Odd-power function $g_y$ is a function defined as follows
+The odd-power function $g_y$ is a function defined as follows
 \begin{definition}(Odd-power function $g_y$.)
     \begin{equation*}
         g_{y}(x) = x^{2y + 1}
     \end{equation*}
 \end{definition}
 where $x\in \mathbb{R}$ and $y$ is constant $y\in \mathbb{N}$.
-The Interesting part is that odd-power function $g_{y} (x)$ may be obtained as a partial case of the function $f$,
-as well as derivative of odd-power $\frac{d}{dx} g_{y}$ evaluated in point some $u\in\mathbb{R}$ may be obtained
-as a sum of partial derivatives of $f$ evaluated in some fixed point, that is explained further in this manuscript.
-One more important thing is to conclude on partial derivative notation,
-more precisely the following notation for the partial derivative is used across the manuscript and remains unchanged
+The Interesting part is that odd-power function $g_{y} (x)$ may be obtained
+as a partial case of the function $f_y$ for $z=x$.
+Also, the ordinary derivative of odd-power $\frac{d}{dx} g_{y}$ evaluate in fixed point $u\in\mathbb{R}$
+may be obtained as a sum of partial derivatives of $f_y$ evaluated in fixed point $(u,u)$.
+We explain this further in the manuscript.
+One more important thing remains to conclude is to define partial derivative's notation.
+More precisely, the following notation for partial derivatives
+is used across the manuscript and remains unchanged
 \begin{notation} (Partial derivative.)
     Let be a function $f(x_1, x_2, \dots, x_n)$ defined over the real space $\mathbb{R}^n$.
     We denote partial derivative of the function $f$ with respect to $x_i$ as follows
     \begin{equation*}
         f^{'}_{x_i} = \lim_{\Delta x_i \to 0} \frac{f(x_1, x_2, \dots, x_i + \Delta x_i, \dots, x_n) - f(x_1, x_2, \dots, x_n)}{\Delta x_i}
     \end{equation*}
-    Derivative of the function $f$ with respect to $x_i$
-    evaluate in point $(y_1, y_2, \dots, y_n) \in \mathbb{R}^n$ is denoted as follows
-    \begin{equation*}
-        f^{'}_{x_i} (y_1, y_2, \dots, y_n)
-    \end{equation*}
-    Moreover, partial derivative $f^{'}_{x_i}$ evaluated at point $(y_1, y_2, \dots, y_n)$ plus
-    partial derivative $f^{'}_{x_j}$ evaluated at point $(y_1, y_2, \dots, y_n)$
-    is equivalent to the sum of partial derivatives $f^{'}_{x_i}, \; f^{'}_{x_j}$
-    evaluated at point $(y_1, y_2, \dots, y_n)$ and to be denoted as
-    \begin{equation*}
-        f^{'}_{x_i} (y_1, y_2, \dots, y_n) + f^{'}_{x_j} (y_1, y_2, \dots, y_n) = [f^{'}_{x_i} + f^{'}_{x_j}]
-        (y_1, y_2, \dots, y_n)
-    \end{equation*}
 \end{notation}
-Therefore, the following identity in terms of partial derivatives shows the relation between odd-power function $g_{y}$ and
-polynomial function $f_{y}$
+Partial derivative of the function $f_{x_i}$ with respect to $x_i$
+evaluate in point $(y_1, y_2, \dots, y_n) \in \mathbb{R}^n$ is denoted as follows
+\begin{equation*}
+    f^{'}_{x_i} (y_1, y_2, \dots, y_n)
+\end{equation*}
+Moreover, partial derivative $f^{'}_{x_i}$ evaluated at point $(y_1, y_2, \dots, y_n)$ plus
+partial derivative $f^{'}_{x_j}$ evaluated at point $(y_1, y_2, \dots, y_n)$
+is equivalent to the sum of partial derivatives $f^{'}_{x_i}, \; f^{'}_{x_j}$
+evaluated at point $(y_1, y_2, \dots, y_n)$ and to be denoted as
+\begin{equation*}
+    f^{'}_{x_i} (y_1, y_2, \dots, y_n) + f^{'}_{x_j} (y_1, y_2, \dots, y_n) = [f^{'}_{x_i} + f^{'}_{x_j}]
+    (y_1, y_2, \dots, y_n)
+\end{equation*}
+Therefore, the following theorem in terms of partial derivatives
+shows the relation between odd-power function $g_{y}$ and function $f_{y}$
 \begin{thm}
     \label{thm:main-theorem}
-    Let be a fixed value $v\in \mathbb{N}$, then derivative $g_v^{'}$ of the odd-power function $g_v(x) = x^{2v + 1}$
-    evaluated at point $u$ equals to derivative $(f_{v})^{'}_{x}$ evaluated at point $(u, u)$ plus
-    derivative $(f_{v})^{'}_{z}$ evaluated at point $(u, u)$
+    Let be a fixed point $v\in \mathbb{N}$, then ordinary derivative $g_v^{'}(u)$ of the odd-power function $g_v(x) = x^{2v + 1}$
+    evaluate in point $u\in\mathbb{R}$ equals to partial derivative $(f_{v})^{'}_{x} (u, u)$ evaluate in point $(u, u)$ plus
+    partial derivative $(f_{v})^{'}_{z} (u, u)$ evaluate in point $(u, u)$
     \begin{equation}
         g_v^{'} (u) = (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u)
         \label{eq:odd-exponential-identity}
     \end{equation}
 \end{thm}
-Particularly, it follows that for every pair $u, v$ an identity holds
+In particular, it follows that for every pair $u \in \mathbb{R}, v \in \mathbb{N}$ an identity holds
 \begin{align*}
 (2v+1)
     u^{2v} &= (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u) \\
     &= [(f_{v})^{'}_{x} + (f_{v})^{'}_{z}](u,u)
 \end{align*}
-that is also an ordinary derivative of odd-power function $t^{2v+1}$, therefore
+that is also an ordinary derivative of odd-power function $t^{2v+1}$ evaluate in point $u\in\mathbb{R}$, therefore
 \begin{align*}
     \frac{d}{dt} t^{2v+1} (u) &= (f_{v})^{'}_{x} (u, u) + (f_{v})^{'}_{z} (u, u) \\
     &= [(f_{v})^{'}_{x} + (f_{v})^{'}_{z}](u,u)
 \end{align*}
-To summarize and clarify all above, we provide a few examples that show an identity~\eqref{eq:odd-exponential-identity}
-in action.
+To summarize and clarify all above, we provide a few examples that show
+an application of the identity~\eqref{eq:odd-exponential-identity}.
 \begin{example}
     \normalfont
     Identity~\eqref{eq:odd-exponential-identity} example for $x\in\mathbb{R}, \; z\in \mathbb{R}$ and $y=1$.
@@ -116,12 +128,13 @@ in action.
         &= \lim_{d \to 0} \left[ -3 d - 2 d^2 + 3 x + 3 d x - 6 z - 6 d z + 6 x z - 6 z^2 \right] \\
         &=3 x - 6 z + 6 x z - 6 z^2
     \end{align*}
-    Combining both $(f_1)^{'}_{x}$ and $(f_1)^{'}_{z}$ evaluated at the point $(u, u)$ we get
+    Summing up both partial derivatives $(f_1)^{'}_{x} (u, u)$ and $(f_1)^{'}_{z} (u, u)$ evaluate in point $(u, u)$, we get
     \begin{align*}
-    (f_1)
-        ^{'}_{x} + (f_1)^{'}_{z}
-        &= 3 x - 3 z + 6 x z - 3 z^2 \\
-        \frac{d}{dt} t^{3} (u) &= [(f_1)^{'}_{x} + (f_1)^{'}_{z}] (u,u)  = 3 u^2
+    (f_1) ^{'}_{x} + (f_1)^{'}_{z} = 3 x - 3 z + 6 x z - 3 z^2
+    \end{align*}
+    Substituting $x=z=u$ yields
+    \begin{align*}
+        \frac{d}{dt} t^{3} (u) = [(f_1)^{'}_{x} + (f_1)^{'}_{z}] (u,u)  = 3 u^2
     \end{align*}
     that confirms the results of the theorem~\ref{thm:main-theorem}.
 \end{example}

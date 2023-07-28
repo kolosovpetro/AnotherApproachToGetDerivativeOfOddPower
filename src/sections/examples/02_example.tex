@@ -1,0 +1,31 @@
+\begin{example}
+    \normalfont
+    Theorem~\ref{thm:main-theorem} example for $x\in\mathbb{R}, \; z\in \mathbb{R}$ and $y=2$.
+    Consider the explicit form of the function $f_{2} (x, z)$ i.e.,
+    \[
+        f_2 (x, z) = 5 x^2 z - 15 x z^2 + 15 x^2 z^2 + 10 z^3 - 30 x z^3 + 10 x^2 z^3 + 15 z^4 - 15 x z^4 + 6 z^5
+    \]
+    Therefore, derivative of $f_{2}$ with respect to $x$ equals to
+    \begin{align*}
+    (f_2)
+        ^{'}_{x} &= \lim_{d \to 0} \left[ 5 d z + 10 x z - 15 z^2 + 15 d z^2 + 30 x z^2 - 30 z^3 + 10 d z^3 +
+        20 x z^3 - 15 z^4 \right] \\
+        &= 10 x z - 15 z^2 + 30 x z^2 - 30 z^3 + 20 x z^3 - 15 z^4
+    \end{align*}
+    Consider derivative of the function $f_2$ with respect to $z$, that is
+    \begin{align*}
+    (f_2)
+        ^{'}_{z}
+        &= 5 x^2 - 30 x z + 30 x^2 z + 30 z^2 - 90 x z^2 + 30 x^2 z^2 + 60 z^3 - 60 x z^3 + 30 z^4
+    \end{align*}
+    Combining both $(f_2)^{'}_{x} (x, z)$ and $(f_2)^{'}_{z} (x, z)$ evaluated at the point $(u, u)$ we get
+    \begin{align*}
+    (f_2)
+        ^{'}_{x} + (f_2)^{'}_{z} &= 5 x^2 - 20 x z + 30 x^2 z + 15 z^2 - 60 x z^2 + 30 x^2 z^2 + 30 z^3 - 40 x z^3 + 15 z^4
+    \end{align*}
+    Yields
+    \begin{equation*}
+        \frac{d}{dt} t^{5} (u) = [(f_2)^{'}_{x} + (f_2)^{'}_{z}] (u,u) = 5 u^4
+    \end{equation*}
+    that confirms the results of the theorem~\ref{thm:main-theorem}.
+\end{example}

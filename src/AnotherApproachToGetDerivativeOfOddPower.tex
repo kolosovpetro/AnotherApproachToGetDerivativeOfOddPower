@@ -19,6 +19,14 @@
 
 \newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
 
+% free foot note
+\let\svthefootnote\thefootnote
+\newcommand\freefootnote[1]{%
+    \let\thefootnote\relax%
+    \footnotetext{#1}%
+    \let\thefootnote\svthefootnote%
+}
+
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{example}[thm]{Example}
 \newtheorem{definition}[thm]{Definition}
@@ -53,6 +61,8 @@
     \maketitle
 
     \tableofcontents
+
+    \freefootnote{Sources: \url{https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower}}
 
 
     \section{Introduction and Main Results} \label{sec:introduction}

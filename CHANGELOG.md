@@ -12,3 +12,6 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update build GitHub Actions
 - Update deploy GitHub Actions
 - Add editorconfig
+- Update README.md
+- Remove redundant images folder
+- Add sources link

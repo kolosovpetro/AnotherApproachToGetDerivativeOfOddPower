@@ -1,0 +1,35 @@
+﻿So far we have successfully reviewed and discussed an identity in terms of partial derivatives evaluated in
+particular points $(v=u, z=u)$ that equals to the ordinary derivative of odd-power function $t^{2u+1}$,
+see~\eqref{thm:main-theorem}.
+However, what is about the inverse process of differentiation, i.e.\ antiderivatives?
+Would theorem~\eqref{thm:main-theorem} have an analog in terms of antiderivatives?
+Well, consider an example.
+Heaving $m=2$ antiderivatives of $f_y(x,z)$ are
+\begin{align*}
+    \int f_y(x,z) \, dx &= \frac{1}{6} x z (-45 x z (1 + z)^2 + 10 x^2 (1 + 3 z + 2 z^2) +
+    6 z^2 (10 + 15 z + 6 z^2))  + C_1 \\
+    \int f_y(x,z) \, dz &= \frac{1}{2} z^2 (5 x^2 (1 + z)^2 + z^2 (5 + 6 z + 2 z^2) -
+    x z (10 + 15 z + 6 z^2)) + C_2
+\end{align*}
+Let be
+\begin{align*}
+    F = \int f_y(x,z) \, dx + C_1 \\
+    G = \int f_y(x,z) \, dz + C_2
+\end{align*}
+Then, evaluating $F$ and $G$ in points $(u,u)$ yields
+\begin{align*}
+    F(u, u) + G(u, u) = \frac{1}{6} 25 u^4 + \frac{1}{2} 11 u^5 + \frac{1}{3} 7 u^6 + C_1 + C_2
+\end{align*}
+Possible analog of theorem~\eqref{thm:main-theorem} assumes that
+\begin{align*}
+    F(u, u) + G(u, u) \equiv u^5
+\end{align*}
+Considering $C_1=C_2=C$ we get
+\begin{align*}
+    F(u, u) + G(u, u) = \frac{1}{6} 25 u^4 + \frac{1}{2} 11 u^5 + \frac{1}{3} 7 u^6 + 2C
+\end{align*}
+Thus, integration constant $C$ is evaluated as
+\begin{align*}
+    C = \frac{1}{12} (-25 u^4 - 27 u^5 - 14 u^6)
+\end{align*}
+Thus, antiderivative case of theorem~\eqref{thm:main-theorem} is a whole new direction for further research.

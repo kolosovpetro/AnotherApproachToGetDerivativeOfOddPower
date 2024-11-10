@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{kolosov_2022}
+Petro Kolosov.
+\newblock {106.37 An unusual identity for odd-powers}.
+\newblock {\em The Mathematical Gazette}, 106(567):509–513, 2022.
+\newblock \url {https://doi.org/10.1017/mag.2022.129}.
+
+\bibitem{kolosov2016link}
+Petro Kolosov.
+\newblock {On the link between Binomial Theorem and Discrete Convolution of
+  Polynomials}.
+\newblock {\em arXiv preprint arXiv:1603.02468}, 2016.
+\newblock \url {https://arxiv.org/abs/1603.02468}.
+
+\bibitem{beardon1996sums}
+Alan~F. Beardon.
+\newblock Sums of powers of integers.
+\newblock {\em The American mathematical monthly}, 103(3):201--213, 1996.
+
+\bibitem{kolosov2022another}
+{Kolosov, Petro}.
+\newblock {Another approach to get derivative of odd-power (Source files)}.
+\newblock Published electronically at
+  \url{https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower},
+  2022.
+
+\end{thebibliography}

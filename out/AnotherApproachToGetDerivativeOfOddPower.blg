@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: E:\RiderProjects\04_LATEX\AnotherApproachToGetDerivativeOfOddPower\out/AnotherApproachToGetDerivativeOfOddPower.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 41 items.
+Database file #1: AnotherApproachToGetDerivativeOfOddPower.bib
+You've used 4 entries,
+            1791 wiz_defined-function locations,
+            473 strings with 4442 characters,
+and the built_in function-call counts, 745 in all, are:
+= -- 70
+> -- 16
+< -- 0
++ -- 8
+- -- 4
+* -- 41
+:= -- 126
+add.period$ -- 14
+call.type$ -- 4
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 31
+empty$ -- 83
+format.name$ -- 4
+if$ -- 162
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 3
+newline$ -- 25
+num.names$ -- 4
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 12
+stack$ -- 0
+substring$ -- 52
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 7
+width$ -- 5
+write$ -- 48

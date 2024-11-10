@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update readme
 - Update license
 - Add verify encoding script
+- Add bibliography *.bbl and *.blg files
 
 ## [1.0.0] - 2024-09-25
 
